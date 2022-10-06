@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>News around the world</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+  <!-- Font awesome -->
+  <script src="https://kit.fontawesome.com/b8d544ce14.js" crossorigin="anonymous"></script>
+
+  <!-- <link href="css/reset.css" rel="stylesheet"> -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="d-flex justify-content-between wrapper">
+      <div class="logo d-flex align-items-center">
+        <i class="fa-solid fa-newspaper fa-3x"></i>
+        <div>
+          <span>News</span><span>Hub</span>
+        </div>
+      </div>
+      <div class="d-flex align-items-center search">
+        <span>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </span>
+        <input type="text" placeholder="Search">
+        <div class="search-overlay"></div>
+      </div>
+    </div>
+    <div class="line"></div>
+  </header>
+
+  <section class="container mt-5">
+    <div class="row" id="news-collection">
+    </div>
+  </section>
+
+  <section class="container mt-5">
+    <div id="loading-indicator" class="d-none flex-column justify-content-center align-items-center">
+      <img src="img/loading.svg" alt="Loading">
+      <p>Loading data from server. Please wait...</p>
+    </div>  
+  </section>
+
+  <footer></footer>
+
+  <div class="align-items-center justify-content-center modal-overlay d-none">
+    <div class="search-modal">
+      <div class="d-flex justify-content-between search-modal-header">
+        <span>Search</span>
+        <span class="close-btn">
+          <i class="fa-solid fa-xmark"></i>
+        </span>
+      </div>
+      <div class="search-modal-body mt-3">
+        <form>
+          <div class="d-flex">
+            <label for="search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </label>
+            <input type="text" placeholder="Search" id="search" name="search" autocomplete="off" required minlength="5">
+          </div>
+          <div class="radio-group">
+            <span>
+              <i class="fa-solid fa-language"></i>
+              Language
+            </span>
+            <ul class="d-flex flex-wrap">
+              <li>
+                <input type="radio" id="en" name="language" value="en" checked>
+                <label for="en">English</label>
+              </li>
+              <li>
+                <input type="radio" id="hi" name="language" value="hi">
+                <label for="hi">Hindi</label>
+              </li>
+              <li>
+                <input type="radio" id="ja" name="language" value="ja">
+                <label for="ja">Japanese</label>
+              </li>
+              <li>
+                <input type="radio" id="ru" name="language" value="ru">
+                <label for="ru">Russian</label>
+              </li>
+              <li>
+                <input type="radio" id="zh" name="language" value="zh">
+                <label for="zh">Chinese</label>
+              </li>
+              <li>
+                <input type="radio" id="de" name="language" value="de">
+                <label for="de">German</label>
+              </li>
+            </ul>
+          </div>
+          <div class="radio-group">
+            <span>
+              <i class="fa-solid fa-sort"></i>
+              Sort by
+            </span>
+            <ul class="d-flex flex-wrap">
+              <li>
+                <input type="radio" id="publishedAt" name="sort" value="publishedAt" checked>
+                <label for="publishedAt">Published Date</label>
+              </li>
+              <li>
+                <input type="radio" id="relevance" name="sort" value="relevance">
+                <label for="relevance">Relevance</label>
+              </li>
+            </ul>
+          </div>
+          <button type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- JQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+  <!-- Custom -->
+  <script src="js/script.js"></script>
+</body>
+</html>
